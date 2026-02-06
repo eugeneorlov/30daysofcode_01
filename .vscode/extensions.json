@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "ms-vscode-remote.remote-wsl",
+    "vitest.explorer",
+    "astro-build.houston"
+  ]
+}

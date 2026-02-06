@@ -1,0 +1,84 @@
+name: Frontend CI
+
+on:
+  pull_request:
+    paths:
+      - "apps/*/src/**"
+      - "apps/*/package.json"
+      - "apps/*/vite.config.*"
+      - "packages/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
+  push:
+    branches: [main]
+    paths:
+      - "apps/*/src/**"
+      - "apps/*/package.json"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-test-build:
+    name: Lint, Test & Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Needed for Turborepo to detect changes
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm turbo lint --filter=...[origin/main]
+
+      - name: Format check
+        run: pnpm turbo format:check --filter=...[origin/main]
+
+      - name: Test
+        run: pnpm turbo test --filter=...[origin/main]
+
+      - name: Build
+        run: pnpm turbo build --filter=...[origin/main]
+
+  trivy-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: "fs"
+          scan-ref: "."
+          severity: "CRITICAL,HIGH"
+          exit-code: "1"
+          ignore-unfixed: true
+
+      - name: npm audit
+        run: |
+          cd apps
+          for dir in */; do
+            if [ -f "$dir/package.json" ]; then
+              echo "::group::Auditing $dir"
+              cd "$dir"
+              npx audit-ci --moderate || true
+              cd ..
+              echo "::endgroup::"
+            fi
+          done
+        continue-on-error: true
