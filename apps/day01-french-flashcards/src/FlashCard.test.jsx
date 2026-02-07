@@ -7,6 +7,7 @@ const mockCard = {
   french: "Bonjour",
   english: "Hello",
   example: "Bonjour, comment allez-vous ?",
+  category: "greetings",
 };
 
 describe("FlashCard", () => {
