@@ -44,7 +44,7 @@ Turborepo only runs tasks for apps that changed — CI stays fast even at Day 30
 | Day | Project | Status |
 |-----|---------|--------|
 | 01-02 | French Flashcards 🇫🇷 | ✅ |
-| 03 | Muay Thai Round Timer ⏱️ | 🔲 |
+| 03 | Muay Thai Round Timer ⏱️ | ✅ |
 | 04-05 | Bodybuilding Log 🏋️ | 🔲 |
 | 06-07 | URL Shortener 🔗 | 🔲 |
 | 08-09 | BJJ Technique Encyclopedia 🥋 | 🔲 |
