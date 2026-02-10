@@ -16,17 +16,19 @@ describe("HistoryPage", () => {
   it("renders session history sorted newest first", () => {
     const sessions = [
       {
-        date: "2026-02-01",
+        id: 1738368000000,
         trainingType: "Bodybuilding",
-        duration: 3600,
+        startedAt: "2026-02-01T10:00:00.000Z",
+        endedAt: "2026-02-01T11:00:00.000Z",
         exercises: [
           { id: "squat", name: "Squat", muscle: "Legs", sets: [{ weight: 225, reps: 5 }] },
         ],
       },
       {
-        date: "2026-02-05",
+        id: 1738713600000,
         trainingType: "Powerlifting",
-        duration: 5400,
+        startedAt: "2026-02-05T10:00:00.000Z",
+        endedAt: "2026-02-05T11:30:00.000Z",
         exercises: [
           {
             id: "bench-press",
@@ -40,17 +42,18 @@ describe("HistoryPage", () => {
     localStorage.setItem("ironlog-sessions", JSON.stringify(sessions));
 
     renderWithProviders(<HistoryPage />);
-    const dates = screen.getAllByText(/2026-02-/);
-    expect(dates[0]).toHaveTextContent("2026-02-05");
-    expect(dates[1]).toHaveTextContent("2026-02-01");
+    const dates = screen.getAllByText(/Feb/);
+    expect(dates[0]).toHaveTextContent("Feb");
+    expect(dates[1]).toHaveTextContent("Feb");
   });
 
   it("shows exercise names in session cards", () => {
     const sessions = [
       {
-        date: "2026-02-01",
+        id: 1738368000000,
         trainingType: "Bodybuilding",
-        duration: 3600,
+        startedAt: "2026-02-01T10:00:00.000Z",
+        endedAt: "2026-02-01T11:00:00.000Z",
         exercises: [
           { id: "squat", name: "Squat", muscle: "Legs", sets: [{ weight: 225, reps: 5 }] },
           {

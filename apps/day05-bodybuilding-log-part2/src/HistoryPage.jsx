@@ -37,7 +37,7 @@ export function HistoryPage() {
             <div className="flex items-center justify-between mb-3">
               <div>
                 <span className="text-white font-semibold">{date}</span>
-                <span className="ml-3 text-xs px-2 py-1 bg-amber-500/20 text-amber-500 rounded capitalize">
+                <span className="ml-3 text-xs px-2 py-1 bg-amber-500/20 text-amber-500 rounded">
                   {session.trainingType}
                 </span>
               </div>

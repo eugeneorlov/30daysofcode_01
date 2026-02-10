@@ -36,7 +36,7 @@ function LastSessionSummary({ session }) {
       <div className="grid grid-cols-3 gap-4">
         <div>
           <div className="text-sm text-gray-400">Type</div>
-          <div className="text-white font-semibold capitalize">{session.trainingType}</div>
+          <div className="text-white font-semibold">{session.trainingType}</div>
         </div>
         <div>
           <div className="text-sm text-gray-400">Duration</div>
@@ -114,8 +114,7 @@ export function SessionPage() {
   }, [activeSession]);
 
   function handleSelectType(type) {
-    const defaultType = user?.defaultTrainingType || type.toLowerCase();
-    startSession(defaultType === type.toLowerCase() ? defaultType : type.toLowerCase());
+    startSession(type);
   }
 
   function handleAddExercise(ex) {
@@ -235,7 +234,7 @@ export function SessionPage() {
       {/* Session header */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold capitalize">{activeSession.trainingType} Session</h2>
+          <h2 className="text-2xl font-bold">{activeSession.trainingType} Session</h2>
           <div className="flex items-center gap-4 text-sm text-gray-400 mt-1">
             <span data-testid="session-timer">{formatTime(elapsed)}</span>
             <span>{totalSets} sets</span>
