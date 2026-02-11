@@ -18,12 +18,8 @@ describe("URLResult", () => {
     render(<URLResult result={result} />);
 
     expect(screen.getByText(/url shortened successfully/i)).toBeInTheDocument();
-    expect(
-      screen.getByDisplayValue("http://localhost:8000/abc123")
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText("https://example.com/very/long/url")
-    ).toBeInTheDocument();
+    expect(screen.getByDisplayValue("http://localhost:8000/abc123")).toBeInTheDocument();
+    expect(screen.getByText("https://example.com/very/long/url")).toBeInTheDocument();
   });
 
   it("copies URL to clipboard when copy button is clicked", async () => {
@@ -43,8 +39,6 @@ describe("URLResult", () => {
     const copyButton = screen.getByRole("button", { name: /copy/i });
     fireEvent.click(copyButton);
 
-    expect(mockClipboard.writeText).toHaveBeenCalledWith(
-      "http://localhost:8000/abc123"
-    );
+    expect(mockClipboard.writeText).toHaveBeenCalledWith("http://localhost:8000/abc123");
   });
 });

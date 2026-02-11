@@ -43,10 +43,7 @@ export function URLForm({ onURLShortened }) {
     <form onSubmit={handleSubmit} className="w-full max-w-2xl">
       <div className="flex flex-col gap-4">
         <div>
-          <label
-            htmlFor="url"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
+          <label htmlFor="url" className="block text-sm font-medium text-gray-700 mb-2">
             Enter URL to shorten
           </label>
           <div className="flex gap-2">
@@ -70,9 +67,7 @@ export function URLForm({ onURLShortened }) {
           </div>
         </div>
         {error && (
-          <div className="text-red-600 text-sm bg-red-50 px-4 py-2 rounded-lg">
-            {error}
-          </div>
+          <div className="text-red-600 text-sm bg-red-50 px-4 py-2 rounded-lg">{error}</div>
         )}
       </div>
     </form>

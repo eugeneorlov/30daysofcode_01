@@ -48,9 +48,7 @@ def test_list_urls_with_data(client):
 def test_redirect_to_url(client):
     """Test redirecting from a short code."""
     # Create a short URL
-    create_response = client.post(
-        "/api/shorten", json={"url": "https://example.com"}
-    )
+    create_response = client.post("/api/shorten", json={"url": "https://example.com"})
     short_code = create_response.json()["short_code"]
 
     # Test redirect

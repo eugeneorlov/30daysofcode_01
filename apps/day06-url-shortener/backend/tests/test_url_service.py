@@ -1,5 +1,3 @@
-import pytest
-
 from src.services.url_service import URLService
 
 

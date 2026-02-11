@@ -33,17 +33,11 @@ export function URLList({ refreshTrigger }) {
   };
 
   if (isLoading) {
-    return (
-      <div className="w-full max-w-2xl text-center text-gray-500">
-        Loading...
-      </div>
-    );
+    return <div className="w-full max-w-2xl text-center text-gray-500">Loading...</div>;
   }
 
   if (error) {
-    return (
-      <div className="w-full max-w-2xl text-center text-red-600">{error}</div>
-    );
+    return <div className="w-full max-w-2xl text-center text-red-600">{error}</div>;
   }
 
   if (urls.length === 0) {
@@ -56,9 +50,7 @@ export function URLList({ refreshTrigger }) {
 
   return (
     <div className="w-full max-w-2xl">
-      <h3 className="text-lg font-semibold text-gray-900 mb-4">
-        Shortened URLs ({urls.length})
-      </h3>
+      <h3 className="text-lg font-semibold text-gray-900 mb-4">Shortened URLs ({urls.length})</h3>
       <div className="space-y-2">
         {urls.map((url) => (
           <div
@@ -72,20 +64,14 @@ export function URLList({ refreshTrigger }) {
                     {url.short_code}
                   </span>
                   <button
-                    onClick={() =>
-                      copyToClipboard(
-                        `http://localhost:8000${url.short_url}`
-                      )
-                    }
+                    onClick={() => copyToClipboard(`http://localhost:8000${url.short_url}`)}
                     className="text-gray-400 hover:text-gray-600"
                     title="Copy short URL"
                   >
                     📋
                   </button>
                 </div>
-                <div className="text-sm text-gray-600 break-all">
-                  → {url.original_url}
-                </div>
+                <div className="text-sm text-gray-600 break-all">→ {url.original_url}</div>
               </div>
             </div>
           </div>

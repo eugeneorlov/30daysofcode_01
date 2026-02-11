@@ -10,9 +10,7 @@ describe("App", () => {
 
   it("renders the URL form", () => {
     render(<App />);
-    expect(
-      screen.getByPlaceholderText(/https:\/\/example\.com/)
-    ).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/https:\/\/example\.com/)).toBeInTheDocument();
   });
 
   it("renders the shorten button", () => {

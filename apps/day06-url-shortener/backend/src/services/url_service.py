@@ -1,6 +1,5 @@
 import random
 import string
-from typing import Optional
 
 
 class URLService:
@@ -24,7 +23,7 @@ class URLService:
         self._urls[short_code] = original_url
         return short_code
 
-    def get_original_url(self, short_code: str) -> Optional[str]:
+    def get_original_url(self, short_code: str) -> str | None:
         """Get the original URL from a short code."""
         return self._urls.get(short_code)
 

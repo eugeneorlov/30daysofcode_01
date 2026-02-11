@@ -24,9 +24,7 @@ async def create_short_url(url_data: URLCreate) -> URLResponse:
     # The frontend can construct the full URL
     short_url = f"/{short_code}"
 
-    return URLResponse(
-        short_code=short_code, original_url=original_url, short_url=short_url
-    )
+    return URLResponse(short_code=short_code, original_url=original_url, short_url=short_url)
 
 
 @api_router.get("/urls", response_model=URLListResponse)

@@ -19,14 +19,10 @@ export function URLResult({ result }) {
 
   return (
     <div className="w-full max-w-2xl bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-      <h3 className="text-lg font-semibold text-gray-900 mb-4">
-        URL Shortened Successfully! 🎉
-      </h3>
+      <h3 className="text-lg font-semibold text-gray-900 mb-4">URL Shortened Successfully! 🎉</h3>
       <div className="space-y-3">
         <div>
-          <label className="block text-sm font-medium text-gray-600 mb-1">
-            Short URL
-          </label>
+          <label className="block text-sm font-medium text-gray-600 mb-1">Short URL</label>
           <div className="flex gap-2">
             <input
               type="text"
@@ -43,9 +39,7 @@ export function URLResult({ result }) {
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-600 mb-1">
-            Original URL
-          </label>
+          <label className="block text-sm font-medium text-gray-600 mb-1">Original URL</label>
           <div className="px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-700 break-all">
             {result.original_url}
           </div>
