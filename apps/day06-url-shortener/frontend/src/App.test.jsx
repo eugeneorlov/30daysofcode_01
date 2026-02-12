@@ -3,18 +3,21 @@ import { describe, it, expect } from "vitest";
 import App from "./App";
 
 describe("App", () => {
-  it("renders the main heading", () => {
+  it("renders the landing page by default", () => {
     render(<App />);
-    expect(screen.getByText("🔗 URL Shortener")).toBeInTheDocument();
+    expect(screen.getByText(/Shorten Your Links/i)).toBeInTheDocument();
   });
 
-  it("renders the URL form", () => {
+  it("renders call-to-action buttons on landing page", () => {
     render(<App />);
-    expect(screen.getByPlaceholderText(/https:\/\/example\.com/)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Get Started Free/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Sign In/i })).toBeInTheDocument();
   });
 
-  it("renders the shorten button", () => {
+  it("renders feature sections on landing page", () => {
     render(<App />);
-    expect(screen.getByRole("button", { name: /shorten/i })).toBeInTheDocument();
+    expect(screen.getByText(/Lightning Fast/i)).toBeInTheDocument();
+    expect(screen.getByText(/Secure & Reliable/i)).toBeInTheDocument();
+    expect(screen.getByText(/Track Performance/i)).toBeInTheDocument();
   });
 });
