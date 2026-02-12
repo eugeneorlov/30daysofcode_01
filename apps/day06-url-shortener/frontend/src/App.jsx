@@ -1,34 +1,44 @@
-import { useState } from "react";
-import { URLForm } from "./components/URLForm";
-import { URLResult } from "./components/URLResult";
-import { URLList } from "./components/URLList";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider, useAuth } from "./context/AuthContext";
+import { LandingPage } from "./pages/LandingPage";
+import { SignIn } from "./pages/SignIn";
+import { SignUp } from "./pages/SignUp";
+import { Dashboard } from "./pages/Dashboard";
+
+function ProtectedRoute({ children }) {
+  const { isAuthenticated, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center">
+        <div className="text-white text-xl">Loading...</div>
+      </div>
+    );
+  }
+
+  return isAuthenticated ? children : <Navigate to="/signin" replace />;
+}
 
 function App() {
-  const [latestResult, setLatestResult] = useState(null);
-  const [refreshTrigger, setRefreshTrigger] = useState(0);
-
-  const handleURLShortened = (result) => {
-    setLatestResult(result);
-    setRefreshTrigger((prev) => prev + 1);
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">🔗 URL Shortener</h1>
-          <p className="text-gray-600">Make your long URLs short and shareable</p>
-        </div>
-
-        <div className="flex flex-col items-center gap-8">
-          <URLForm onURLShortened={handleURLShortened} />
-          <URLResult result={latestResult} />
-          <div className="w-full max-w-2xl border-t border-gray-300 pt-8">
-            <URLList refreshTrigger={refreshTrigger} />
-          </div>
-        </div>
-      </div>
-    </div>
+    <Router>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </AuthProvider>
+    </Router>
   );
 }
 

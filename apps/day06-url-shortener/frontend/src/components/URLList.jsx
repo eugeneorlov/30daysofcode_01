@@ -33,16 +33,16 @@ export function URLList({ refreshTrigger }) {
   };
 
   if (isLoading) {
-    return <div className="w-full max-w-2xl text-center text-gray-500">Loading...</div>;
+    return <div className="w-full max-w-2xl text-center text-gray-300">Loading...</div>;
   }
 
   if (error) {
-    return <div className="w-full max-w-2xl text-center text-red-600">{error}</div>;
+    return <div className="w-full max-w-2xl text-center text-red-400">{error}</div>;
   }
 
   if (urls.length === 0) {
     return (
-      <div className="w-full max-w-2xl text-center text-gray-500">
+      <div className="w-full max-w-2xl text-center text-gray-300">
         No URLs shortened yet. Create your first one above!
       </div>
     );
@@ -50,28 +50,28 @@ export function URLList({ refreshTrigger }) {
 
   return (
     <div className="w-full max-w-2xl">
-      <h3 className="text-lg font-semibold text-gray-900 mb-4">Shortened URLs ({urls.length})</h3>
+      <h3 className="text-lg font-semibold text-white mb-4">Shortened URLs ({urls.length})</h3>
       <div className="space-y-2">
         {urls.map((url) => (
           <div
             key={url.short_code}
-            className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow"
+            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4 hover:bg-white/15 transition-all"
           >
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="font-mono text-sm font-semibold text-blue-600">
+                  <span className="font-mono text-sm font-semibold text-cyan-400">
                     {url.short_code}
                   </span>
                   <button
                     onClick={() => copyToClipboard(`http://localhost:8000${url.short_url}`)}
-                    className="text-gray-400 hover:text-gray-600"
+                    className="text-gray-400 hover:text-gray-200"
                     title="Copy short URL"
                   >
                     📋
                   </button>
                 </div>
-                <div className="text-sm text-gray-600 break-all">→ {url.original_url}</div>
+                <div className="text-sm text-gray-300 break-all">→ {url.original_url}</div>
               </div>
             </div>
           </div>
