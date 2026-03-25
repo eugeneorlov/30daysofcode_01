@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
 from .database import create_db_and_tables
+from .routes.pastes import router as pastes_router
 
 
 @asynccontextmanager
@@ -25,7 +26,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# TODO: Mount routes here when ready
+# Mount routes
+app.include_router(pastes_router, prefix="/api/pastes")
 
 
 @app.get("/")
