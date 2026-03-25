@@ -8,4 +8,6 @@ dependencies = [
     "fastapi>=0.135.2",
     "sqlmodel>=0.0.37",
     "uvicorn>=0.42.0",
+    "pytest>=8.0.0",
+    "httpx>=0.25.0",
 ]
