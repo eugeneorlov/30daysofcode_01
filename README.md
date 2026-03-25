@@ -45,19 +45,19 @@ Turborepo only runs tasks for apps that changed — CI stays fast even at Day 30
 |-----|---------|--------|
 | 01-02 | French Flashcards 🇫🇷 | ✅ |
 | 03 | Muay Thai Round Timer ⏱️ | ✅ |
-| 04-05 | Bodybuilding Log 🏋️ | 🔲 |
-| 06-07 | URL Shortener 🔗 | 🔲 |
-| 08-09 | BJJ Technique Encyclopedia 🥋 | 🔲 |
-| 10-11 | Pastebin 📋 | 🔲 |
-| 12-13 | ADV Ride Planner 🗺️ | 🔲 |
-| 14 | Markdown Note-Taker 📝 | 🔲 |
-| 15-16 | Real-Time Chat 💬 | 🔲 |
-| 17-18 | Weekly Planner 📅 | 🔲 |
-| 19-20 | Metal Discovery Board 🎵 | 🔲 |
-| 21 | Auth Module 🔐 | 🔲 |
-| 22-23 | Travel Bucket List 🌍 | 🔲 |
-| 24-25 | French Immersion Dashboard 🧠 | 🔲 |
-| 26 | Generative Art 🎨 | 🔲 |
-| 27-28 | Personal Dashboard 🏠 | 🔲 |
-| 29 | Portfolio Site 🚀 | 🔲 |
-| 30 | Wildcard 🎯 | 🔲 |
+| 04-05 | Bodybuilding Log 🏋️ | ✅ |
+| 06-07 | URL Shortener 🔗 | ✅ |
+| 08-09 | BJJ Technique Encyclopedia 🥋 | ✅ |
+| 10-11 | Pastebin 📋 | ✅ |
+| 12-13 | ADV Ride Planner 🗺️ | ✅ |
+| 14 | Markdown Note-Taker 📝 | ✅ |
+| 15-16 | Real-Time Chat 💬 | ✅ |
+| 17-18 | Weekly Planner 📅 | ✅ |
+| 19-20 | Metal Discovery Board 🎵 | ✅ |
+| 21 | Auth Module 🔐 | ✅ |
+| 22-23 | Travel Bucket List 🌍 | ✅ |
+| 24-25 | French Immersion Dashboard 🧠 | ✅ |
+| 26 | Generative Art 🎨 | ✅ |
+| 27-28 | Personal Dashboard 🏠 | ✅ |
+| 29 | Portfolio Site 🚀 | ✅ |
+| 30 | Wildcard 🎯 | ✅ |
