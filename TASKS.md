@@ -35,7 +35,7 @@
     - PasteListItem(BaseModel): short_id, title, language, created_at, view_count (no content for list view)
 
 ## T3: Implement paste service and routes
-- STATUS: failed
+- STATUS: done
 - FILES: apps/day10-pastebin/backend/src/services/paste_service.py, apps/day10-pastebin/backend/src/routes/pastes.py
 - VERIFY: cd apps/day10-pastebin/backend && uv run python -c "from src.routes.pastes import router; print(len(router.routes))"
 - CRITIC: review
@@ -54,7 +54,7 @@
   Wire the router into main.py with prefix /api/pastes.
 
 ## T4: Write backend tests and seed data
-- STATUS: failed
+- STATUS: done
 - FILES: apps/day10-pastebin/backend/tests/test_pastes.py, apps/day10-pastebin/backend/scripts/seed.py
 - VERIFY: cd apps/day10-pastebin/backend && uv run pytest tests/ -v && uv run python scripts/seed.py
 - CRITIC: review
@@ -95,7 +95,7 @@
   Verify: pnpm build completes without errors.
 
 ## T6: Build CreatePage — new paste form
-- STATUS: failed
+- STATUS: done
 - FILES: apps/day10-pastebin/frontend/src/pages/CreatePage.jsx, apps/day10-pastebin/frontend/src/components/CodeEditor.jsx
 - VERIFY: cd apps/day10-pastebin/frontend && pnpm build
 - CRITIC: review
@@ -116,7 +116,7 @@
   Style with Tailwind. Dark theme: bg-gray-950 text-gray-100. Max-width container centered.
 
 ## T7: Build ViewPage — paste detail with syntax highlighting
-- STATUS: failed
+- STATUS: done
 - FILES: apps/day10-pastebin/frontend/src/pages/ViewPage.jsx, apps/day10-pastebin/frontend/src/components/CodeBlock.jsx
 - VERIFY: cd apps/day10-pastebin/frontend && pnpm build
 - CRITIC: review
@@ -141,7 +141,7 @@
   Style with Tailwind. Same dark theme as CreatePage.
 
 ## T8: Build BrowsePage — recent pastes list
-- STATUS: failed
+- STATUS: done
 - FILES: apps/day10-pastebin/frontend/src/pages/BrowsePage.jsx, apps/day10-pastebin/frontend/src/components/PasteListItem.jsx
 - VERIFY: cd apps/day10-pastebin/frontend && pnpm build
 - CRITIC: review
@@ -164,7 +164,7 @@
   Style with Tailwind. Same dark theme.
 
 ## T9: Write frontend tests
-- STATUS: pending
+- STATUS: done
 - FILES: apps/day10-pastebin/frontend/src/__tests__/
 - VERIFY: cd apps/day10-pastebin/frontend && pnpm test -- --run
 - CRITIC: skip
@@ -184,7 +184,7 @@
     - Renders code content in a pre/code block
 
 ## T10: Polish and update README
-- STATUS: pending
+- STATUS: done
 - FILES: apps/day10-pastebin/frontend/src/App.jsx, README.md
 - VERIFY: cd apps/day10-pastebin/frontend && pnpm build && cd ../../ && grep "day10-pastebin" README.md
 - CRITIC: skip
