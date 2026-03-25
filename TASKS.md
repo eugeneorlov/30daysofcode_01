@@ -169,7 +169,7 @@
   Style: dark theme bg-gray-950, card sections with bg-gray-900 rounded-lg p-4.
 
 ## T7: Build RideDetailPage — view ride with full map
-- STATUS: pending
+- STATUS: failed
 - FILES: apps/day12-adv-ride-planner/frontend/src/pages/RideDetailPage.jsx, apps/day12-adv-ride-planner/frontend/src/components/RideStats.jsx
 - VERIFY: cd apps/day12-adv-ride-planner/frontend && pnpm build
 - CRITIC: review
@@ -190,7 +190,7 @@
   Style: same dark theme, max-w-6xl container centered.
 
 ## T8: Build RideListPage — browse all rides
-- STATUS: pending
+- STATUS: failed
 - FILES: apps/day12-adv-ride-planner/frontend/src/pages/RideListPage.jsx, apps/day12-adv-ride-planner/frontend/src/components/RideCard.jsx
 - VERIFY: cd apps/day12-adv-ride-planner/frontend && pnpm build
 - CRITIC: review
