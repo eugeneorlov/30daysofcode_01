@@ -52,7 +52,7 @@
     - RideListItem(BaseModel): id, name, terrain, difficulty, estimated_hours, total_distance_km, created_at, waypoint_count: int
 
 ## T3: Implement ride service and routes
-- STATUS: pending
+- STATUS: done
 - FILES: apps/day12-adv-ride-planner/backend/src/services/ride_service.py, apps/day12-adv-ride-planner/backend/src/routes/rides.py
 - VERIFY: cd apps/day12-adv-ride-planner/backend && uv run python -c "from src.routes.rides import router; print(len(router.routes))"
 - CRITIC: skip
@@ -74,7 +74,7 @@
   Wire the router into main.py with prefix /api/rides.
 
 ## T4: Write backend tests and seed data
-- STATUS: pending
+- STATUS: done
 - FILES: apps/day12-adv-ride-planner/backend/tests/test_rides.py, apps/day12-adv-ride-planner/backend/scripts/seed.py
 - VERIFY: cd apps/day12-adv-ride-planner/backend && uv run pytest tests/ -v && uv run python scripts/seed.py
 - CRITIC: skip
@@ -141,7 +141,7 @@
   Verify: pnpm build completes without errors.
 
 ## T6: Build RideEditorPage — create/edit ride with map
-- STATUS: pending
+- STATUS: done
 - FILES: apps/day12-adv-ride-planner/frontend/src/pages/RideEditorPage.jsx, apps/day12-adv-ride-planner/frontend/src/components/RouteMap.jsx, apps/day12-adv-ride-planner/frontend/src/components/WaypointList.jsx
 - VERIFY: cd apps/day12-adv-ride-planner/frontend && pnpm build
 - CRITIC: skip
