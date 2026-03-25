@@ -146,6 +146,7 @@ export function CreatePage() {
               value={content}
               onChange={(e) => setContent(e.target.value)}
               placeholder={`Enter your ${language !== 'plaintext' ? language : 'code'} here...`}
+              autoFocus={true}
             />
           </div>
 

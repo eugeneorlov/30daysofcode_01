@@ -35,13 +35,18 @@ function Navigation() {
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-950">
+      <div className="min-h-screen bg-gray-950 flex flex-col">
         <Navigation />
-        <Routes>
-          <Route path="/" element={<BrowsePage />} />
-          <Route path="/new" element={<CreatePage />} />
-          <Route path="/:shortId" element={<ViewPage />} />
-        </Routes>
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<BrowsePage />} />
+            <Route path="/new" element={<CreatePage />} />
+            <Route path="/:shortId" element={<ViewPage />} />
+          </Routes>
+        </main>
+        <footer className="text-center py-4 text-gray-500 text-xs">
+          Built as part of 30 Days of Code
+        </footer>
       </div>
     </Router>
   )
