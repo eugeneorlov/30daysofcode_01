@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .database import create_db_and_tables
+from .routes.rides import router as rides_router
 
 
 @asynccontextmanager
@@ -32,5 +33,5 @@ async def root():
     return {"message": "ADV Ride Planner API"}
 
 
-# TODO: Mount routes here when they are created
-# app.include_router(routes.router)
+# Mount routes
+app.include_router(rides_router, prefix="/api/rides", tags=["rides"])

@@ -107,3 +107,19 @@ class WaypointUpdate(SQLModel):
     longitude: Optional[float] = Field(default=None)
     waypoint_type: Optional[WaypointType] = Field(default=None)
     order_index: Optional[int] = Field(default=None, ge=0)
+
+
+# API models for routes
+class RideOut(RideRead):
+    """Model for returning a ride with its waypoints."""
+    waypoints: List[WaypointRead] = []
+
+
+class RideListItem(RideRead):
+    """Model for listing rides with waypoint count."""
+    waypoint_count: int
+
+
+class RideCreateWithWaypoints(RideCreate):
+    """Model for creating a ride with waypoints."""
+    waypoints: List[WaypointCreate] = []
