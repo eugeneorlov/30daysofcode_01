@@ -80,7 +80,7 @@ export function ViewPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-950 text-gray-100 flex items-center justify-center">
+      <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] text-gray-100">
         <div className="text-center">
           <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
           <p className="mt-4 text-gray-400">Loading paste...</p>
@@ -91,7 +91,7 @@ export function ViewPage() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-950 text-gray-100">
+      <div className="text-gray-100">
         <div className="max-w-4xl mx-auto p-6">
           <div className="text-center py-16">
             <h1 className="text-4xl font-bold text-gray-200 mb-4">
@@ -120,7 +120,7 @@ export function ViewPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-950 text-gray-100">
+    <div className="text-gray-100">
       <div className="max-w-5xl mx-auto p-6">
         {/* Header */}
         <div className="mb-8">
