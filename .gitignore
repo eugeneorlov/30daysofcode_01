@@ -37,3 +37,4 @@ htmlcov/
 
 # Trivy
 .trivyignore
+*.db
