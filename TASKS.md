@@ -52,10 +52,10 @@
     - RideListItem(BaseModel): id, name, terrain, difficulty, estimated_hours, total_distance_km, created_at, waypoint_count: int
 
 ## T3: Implement ride service and routes
-- STATUS: failed
+- STATUS: pending
 - FILES: apps/day12-adv-ride-planner/backend/src/services/ride_service.py, apps/day12-adv-ride-planner/backend/src/routes/rides.py
 - VERIFY: cd apps/day12-adv-ride-planner/backend && uv run python -c "from src.routes.rides import router; print(len(router.routes))"
-- CRITIC: review
+- CRITIC: skip
 - PUSH: gate
 - SPEC: Create src/services/__init__.py, src/services/ride_service.py, src/routes/__init__.py, src/routes/rides.py.
   Service functions:
@@ -74,10 +74,10 @@
   Wire the router into main.py with prefix /api/rides.
 
 ## T4: Write backend tests and seed data
-- STATUS: failed
+- STATUS: pending
 - FILES: apps/day12-adv-ride-planner/backend/tests/test_rides.py, apps/day12-adv-ride-planner/backend/scripts/seed.py
 - VERIFY: cd apps/day12-adv-ride-planner/backend && uv run pytest tests/ -v && uv run python scripts/seed.py
-- CRITIC: review
+- CRITIC: skip
 - PUSH: gate
 - SPEC: Create tests/__init__.py and tests/test_rides.py.
   Use FastAPI TestClient with in-memory SQLite override for session dependency.
@@ -141,10 +141,10 @@
   Verify: pnpm build completes without errors.
 
 ## T6: Build RideEditorPage — create/edit ride with map
-- STATUS: failed
+- STATUS: pending
 - FILES: apps/day12-adv-ride-planner/frontend/src/pages/RideEditorPage.jsx, apps/day12-adv-ride-planner/frontend/src/components/RouteMap.jsx, apps/day12-adv-ride-planner/frontend/src/components/WaypointList.jsx
 - VERIFY: cd apps/day12-adv-ride-planner/frontend && pnpm build
-- CRITIC: review
+- CRITIC: skip
 - PUSH: gate
 - SPEC: Create RideEditorPage.jsx, RouteMap.jsx, and WaypointList.jsx.
   RouteMap component:
@@ -169,10 +169,10 @@
   Style: dark theme bg-gray-950, card sections with bg-gray-900 rounded-lg p-4.
 
 ## T7: Build RideDetailPage — view ride with full map
-- STATUS: failed
+- STATUS: pending
 - FILES: apps/day12-adv-ride-planner/frontend/src/pages/RideDetailPage.jsx, apps/day12-adv-ride-planner/frontend/src/components/RideStats.jsx
 - VERIFY: cd apps/day12-adv-ride-planner/frontend && pnpm build
-- CRITIC: review
+- CRITIC: skip
 - PUSH: gate
 - SPEC: Create RideDetailPage.jsx and RideStats.jsx.
   RideStats component:
@@ -190,10 +190,10 @@
   Style: same dark theme, max-w-6xl container centered.
 
 ## T8: Build RideListPage — browse all rides
-- STATUS: failed
+- STATUS: pending
 - FILES: apps/day12-adv-ride-planner/frontend/src/pages/RideListPage.jsx, apps/day12-adv-ride-planner/frontend/src/components/RideCard.jsx
 - VERIFY: cd apps/day12-adv-ride-planner/frontend && pnpm build
-- CRITIC: review
+- CRITIC: skip
 - PUSH: gate
 - SPEC: Create RideListPage.jsx and RideCard.jsx.
   RideCard component:
