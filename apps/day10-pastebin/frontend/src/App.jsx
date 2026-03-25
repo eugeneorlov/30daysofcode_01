@@ -1,11 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { CreatePage } from './pages/CreatePage'
 
 function BrowsePage() {
   return <div>Browse Page - Coming Soon</div>
-}
-
-function CreatePage() {
-  return <div>Create Page - Coming Soon</div>
 }
 
 function ViewPage() {
