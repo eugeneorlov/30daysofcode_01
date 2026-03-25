@@ -39,6 +39,13 @@ function App() {
           <Route path="/ride/:id" element={<RideDetailPage />} />
           <Route path="/ride/:id/edit" element={<RideEditorPage />} />
         </Routes>
+
+        {/* Footer */}
+        <footer className="mt-16 py-8 border-t border-gray-800">
+          <div className="container mx-auto px-4 text-center">
+            <p className="text-gray-400 text-sm">Built as part of 30 Days of Code</p>
+          </div>
+        </footer>
       </div>
     </Router>
   )

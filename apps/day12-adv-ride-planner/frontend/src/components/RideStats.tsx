@@ -99,8 +99,18 @@ export function RideStats({ ride }: RideStatsProps) {
   // Get waypoint count
   const waypointCount = ride.waypoints?.length || 0
 
+  // Format created date as "March 25, 2026"
+  const formatCreatedDate = (dateString: string): string => {
+    const date = new Date(dateString)
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    })
+  }
+
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
       {/* Terrain Badge */}
       <StatCard
         label="Terrain"
@@ -134,6 +144,13 @@ export function RideStats({ ride }: RideStatsProps) {
         label="Waypoints"
         value={`${waypointCount} point${waypointCount !== 1 ? 's' : ''}`}
         icon="📍"
+      />
+
+      {/* Created Date */}
+      <StatCard
+        label="Created"
+        value={formatCreatedDate(ride.created_at)}
+        icon="📅"
       />
     </div>
   )

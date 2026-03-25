@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { RouteMap } from '../components/RouteMap'
 import { WaypointList } from '../components/WaypointList'
@@ -48,6 +48,9 @@ export function RideEditorPage() {
   const [waypoints, setWaypoints] = useState<Waypoint[]>([])
   const [selectedWaypointIndex, setSelectedWaypointIndex] = useState<number | null>(null)
 
+  // Ref for auto-focusing the name input
+  const nameInputRef = useRef<HTMLInputElement>(null)
+
   // Terrain and difficulty options
   const terrainOptions = [
     { value: '', label: 'Select terrain...' },
@@ -64,6 +67,13 @@ export function RideEditorPage() {
     { value: 'hard', label: 'Hard' },
     { value: 'expert', label: 'Expert' },
   ]
+
+  // Auto-focus name input on mount
+  useEffect(() => {
+    if (nameInputRef.current && !isEditMode) {
+      nameInputRef.current.focus()
+    }
+  }, [isEditMode])
 
   // Load existing ride data in edit mode
   useEffect(() => {
@@ -248,6 +258,7 @@ export function RideEditorPage() {
                 Name *
               </label>
               <input
+                ref={nameInputRef}
                 type="text"
                 value={formData.name}
                 onChange={(e) => handleFormChange('name', e.target.value)}
