@@ -20,7 +20,7 @@ def create_ride(session: Session, data: RideCreateWithWaypoints) -> Ride:
     # Create waypoints with order_index from list position
     for index, waypoint_data in enumerate(data.waypoints):
         waypoint = Waypoint(
-            **waypoint_data.model_dump(),
+            **waypoint_data.model_dump(exclude={'order_index'}),
             ride_id=ride.id,
             order_index=index
         )
@@ -101,7 +101,7 @@ def update_ride(session: Session, ride_id: int, data: RideCreateWithWaypoints) -
     # Create new waypoints with order_index from list position
     for index, waypoint_data in enumerate(data.waypoints):
         waypoint = Waypoint(
-            **waypoint_data.model_dump(),
+            **waypoint_data.model_dump(exclude={'order_index'}),
             ride_id=ride.id,
             order_index=index
         )
